@@ -130,6 +130,7 @@
     <ClCompile Include="time4math.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LudmilaMihailovna.h" />
     <ClInclude Include="only4math.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

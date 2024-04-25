@@ -23,5 +23,8 @@
     <ClInclude Include="only4math.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="LudmilaMihailovna.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
