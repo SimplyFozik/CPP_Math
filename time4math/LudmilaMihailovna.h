@@ -5,13 +5,18 @@
 using namespace std;
 
 int TopStack = -1;
-int Stack[100];
+char Stack[100];
 string reversed_polk;
 
 void funcStackAdd(char symbol)
 {
 	TopStack++;
 	Stack[TopStack] = symbol;
+}
+
+void funcStackRemove()
+{
+	TopStack--;
 }
 
 int funcPriority(char operation)
@@ -21,11 +26,29 @@ int funcPriority(char operation)
 	else return -1;
 }
 
-void funcNullPriority(int index) // ex. *-**/+
+void funcReversedWrite(char symbol)
 {
-	for (int i = index - 1; (i > 0) && (funcPriority(Stack[i]) > 0); i--)
+	reversed_polk = reversed_polk + symbol;
+}
+
+void funcNullPriority() // ex. *-**/+
+{
+	if (TopStack > 0)
 	{
-		funcStackAdd(Stack[i]);
+		for (int i = TopStack - 1; (i > 0) && (funcPriority(Stack[i]) > 0); i--)
+		{
+			funcReversedWrite(Stack[i]);
+			funcStackRemove();
+		}
+	}
+}
+
+void funcEnd()
+{
+	for (int i = TopStack; i >= 0; i--)
+	{
+		funcReversedWrite(Stack[i]);
+		funcStackRemove();
 	}
 }
 
@@ -37,10 +60,7 @@ void funcNullPriority(int index) // ex. *-**/+
 //	}
 //}
 
-void funcStackRemove()
-{
-	TopStack--;
-}
+
 
 void funcStackWrite()
 {
@@ -51,10 +71,7 @@ void funcStackWrite()
 	cout << " <- Top Of Stack";
 }
 
-void funcReversedWrite()
-{
-	cout << "Result: " << reversed_polk;
-}
+
 
 void funcAnalyze(string arr, int size)
 {
@@ -62,7 +79,7 @@ void funcAnalyze(string arr, int size)
 	{
 		if (isdigit(arr[i]))
 		{
-			reversed_polk += arr[i];
+			funcReversedWrite(arr[i]);
 		}
 		else if (funcPriority(arr[i]) == 1)
 		{
@@ -70,7 +87,8 @@ void funcAnalyze(string arr, int size)
 		}
 		else if (funcPriority(arr[i]) == 0) // add '+' or '-'
 		{
-			funcNullPriority(i);
+			funcStackAdd(arr[i]);
+			funcNullPriority();
 		}
 		else if (arr[i] == '(')
 		{
@@ -85,7 +103,8 @@ void funcAnalyze(string arr, int size)
 			cout << "Error!" << endl << "There is no " << to_string(arr[i]) << " Operation!" << endl;
 		}
 	}
-	funcReversedWrite();
+	funcEnd();
 	cout << endl;
+	cout << reversed_polk << endl;
 	funcStackWrite();
 }
