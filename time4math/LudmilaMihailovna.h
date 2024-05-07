@@ -5,7 +5,9 @@
 using namespace std;
 
 int TopStack = -1;
+int NumTopStack = -1;
 char Stack[100];
+int NumStack[100];
 string reversed_polk;
 
 void funcStackAdd(char symbol)
@@ -35,7 +37,7 @@ void funcNullPriority() // ex. *-**/+
 {
 	if (TopStack > 0)
 	{
-		for (int i = TopStack - 1; (i > 0) && (funcPriority(Stack[i]) > 0); i--)
+		for (int i = TopStack; (i >= 0) && (funcPriority(Stack[i]) > 0); i--)
 		{
 			funcReversedWrite(Stack[i]);
 			funcStackRemove();
@@ -52,13 +54,15 @@ void funcEnd()
 	}
 }
 
-//void funcPairsPush(int index)
-//{
-//	for (int i = index; Stack[i] != '('; i--)
-//	{
-//		funcStackAdd(Stack[i]);
-//	}
-//}
+void funcPairsPush()
+{
+	for (int i = TopStack; Stack[i] != '('; i--)
+	{
+		funcReversedWrite(Stack[i]);
+		funcStackRemove();
+	}
+	funcStackRemove();
+}
 
 
 
@@ -87,8 +91,9 @@ void funcAnalyze(string arr, int size)
 		}
 		else if (funcPriority(arr[i]) == 0) // add '+' or '-'
 		{
-			funcStackAdd(arr[i]);
 			funcNullPriority();
+			funcStackAdd(arr[i]);
+			
 		}
 		else if (arr[i] == '(')
 		{
@@ -96,7 +101,7 @@ void funcAnalyze(string arr, int size)
 		}
 		else if (arr[i] == ')')
 		{
-
+			funcPairsPush();
 		}
 		else
 		{
@@ -107,4 +112,21 @@ void funcAnalyze(string arr, int size)
 	cout << endl;
 	cout << reversed_polk << endl;
 	funcStackWrite();
+}
+
+void funcFillNumStack()
+{
+	for (int i = 0; i < reversed_polk.size(); i++)
+	{
+		if (isdigit(reversed_polk[i]))
+		{
+			NumTopStack++;
+			NumStack[i] = reversed_polk[i];
+		}
+	}
+}
+
+void funcCalculate()
+{
+	for (int i = 0; )
 }
