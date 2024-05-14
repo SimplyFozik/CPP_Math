@@ -1,4 +1,3 @@
 ﻿  time4math.cpp
-C:\Users\top\Documents\C-Math\time4math\LudmilaMihailovna.h(83,45): warning C4244: =: преобразование "int" в "float", возможна потеря данных
 C:\Users\top\Documents\C-Math\time4math\time4math.cpp(14,35): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
   time4math.vcxproj -> C:\Users\top\Documents\C-Math\x64\Debug\time4math.exe

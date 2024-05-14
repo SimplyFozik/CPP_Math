@@ -5,7 +5,7 @@
 using namespace std;
 
 int TopStack = -1;
-int NumTopStack = -1;
+int NumTopStack = 0;
 char Stack[100];
 float NumStack[100];
 string reversed_polk;
@@ -33,11 +33,11 @@ void funcReversedWrite(char symbol)
 	reversed_polk = reversed_polk + symbol;
 }
 
-void funcNullPriority() // ex. *-**/+
+void funcNullPriority(int priority) // ex. *-**/+
 {
-	if (TopStack > 0)
+	if (TopStack >= 0)
 	{
-		for (int i = TopStack; (i >= 0) && (funcPriority(Stack[i]) > 0); i--)
+		for (int i = TopStack; (i >= 0) && (funcPriority(Stack[i]) >= priority); i--)
 		{
 			funcReversedWrite(Stack[i]);
 			funcStackRemove();
@@ -84,33 +84,39 @@ void funcCalculate()
 	{
 		if (isdigit(reversed_polk[i]))
 		{
-			for (int j = i; reversed_polk[j] != '+' || reversed_polk[j] != '-' || reversed_polk[j] != '/' || reversed_polk[j] != '*' || reversed_polk[j] != ' '; j++)
+			NumStack[NumTopStack] = 0;
+			for (; isdigit(reversed_polk[i]); i++)
 			{
-				NumStack[NumTopStack] += reversed_polk[j] - '0';
+				NumStack[NumTopStack] = (NumStack[NumTopStack] * 10) + reversed_polk[i] - '0';
+				//cout << NumStack[NumTopStack] << endl;
 			}
 			NumTopStack++;
+			i--;
 		}
 		else if (funcPriority(reversed_polk[i]) == 0 || funcPriority(reversed_polk[i]) == 1)
 		{
+			cout << NumStack[NumTopStack - 2] << " " << NumStack[NumTopStack - 1] << endl;
+			
 			switch (reversed_polk[i])
 			{
 			case '+':
-				NumStack[NumTopStack - 1] = NumStack[NumTopStack - 1] + NumStack[NumTopStack];
+				NumStack[NumTopStack - 2] = NumStack[NumTopStack - 2] + NumStack[NumTopStack - 1];
 				NumTopStack--;
 				break;
 			case '-':
-				NumStack[NumTopStack - 1] = NumStack[NumTopStack - 1] - NumStack[NumTopStack];
+				NumStack[NumTopStack - 2] = NumStack[NumTopStack - 2] - NumStack[NumTopStack - 1];
 				NumTopStack--;
 				break;
 			case '*':
-				NumStack[NumTopStack - 1] = NumStack[NumTopStack - 1] * NumStack[NumTopStack];
+				NumStack[NumTopStack - 2] = NumStack[NumTopStack - 2] * NumStack[NumTopStack - 1];
 				NumTopStack--;
 				break;
 			case '/':
-				NumStack[NumTopStack - 1] = NumStack[NumTopStack - 1] / NumStack[NumTopStack];
+				NumStack[NumTopStack - 2] = NumStack[NumTopStack - 2] / NumStack[NumTopStack - 1];
 				NumTopStack--;
 				break;
 			}
+			cout << NumStack[NumTopStack - 1] << endl;
 		}
 	}
 	cout << "Result " << NumStack[0];
@@ -122,15 +128,21 @@ void funcAnalyze(string arr, int size)
 	{
 		if (isdigit(arr[i]))
 		{
-			funcReversedWrite(arr[i]);
+			for (; isdigit(arr[i]); i++)
+			{
+				funcReversedWrite(arr[i]);
+			}
+			funcReversedWrite(' ');
+			i--;
 		}
 		else if (funcPriority(arr[i]) == 1)
 		{
+			funcNullPriority(1);
 			funcStackAdd(arr[i]); // add '*' or '/'
 		}
 		else if (funcPriority(arr[i]) == 0) // add '+' or '-'
 		{
-			funcNullPriority();
+			funcNullPriority(0);
 			funcStackAdd(arr[i]);
 			
 		}
