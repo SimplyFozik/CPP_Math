@@ -95,7 +95,7 @@ void funcCalculate()
 		}
 		else if (funcPriority(reversed_polk[i]) == 0 || funcPriority(reversed_polk[i]) == 1)
 		{
-			cout << NumStack[NumTopStack - 2] << " " << NumStack[NumTopStack - 1] << endl;
+			cout << NumStack[NumTopStack - 2] << " " << reversed_polk[i] << " " << NumStack[NumTopStack - 1] << endl;
 			
 			switch (reversed_polk[i])
 			{
