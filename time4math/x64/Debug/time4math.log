@@ -1,3 +1,25 @@
 ﻿  time4math.cpp
-C:\Users\top\Documents\C-Math\time4math\time4math.cpp(14,35): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-  time4math.vcxproj -> C:\Users\top\Documents\C-Math\x64\Debug\time4math.exe
+C:\C++\C-Math\time4math\time4math.cpp(19,28): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\C++\C-Math\time4math\time4math.cpp(21,23): warning C4244: инициализация: преобразование "_Rep" в "float", возможна потеря данных
+C:\C++\C-Math\time4math\time4math.cpp(21,23): warning C4244:         with
+C:\C++\C-Math\time4math\time4math.cpp(21,23): warning C4244:         [
+C:\C++\C-Math\time4math\time4math.cpp(21,23): warning C4244:             _Rep=__int64
+C:\C++\C-Math\time4math\time4math.cpp(21,23): warning C4244:         ]
+C:\C++\C-Math\time4math\time4math.cpp(22,22): warning C4244: инициализация: преобразование "_Rep" в "float", возможна потеря данных
+C:\C++\C-Math\time4math\time4math.cpp(22,22): warning C4244:         with
+C:\C++\C-Math\time4math\time4math.cpp(22,22): warning C4244:         [
+C:\C++\C-Math\time4math\time4math.cpp(22,22): warning C4244:             _Rep=__int64
+C:\C++\C-Math\time4math\time4math.cpp(22,22): warning C4244:         ]
+C:\C++\C-Math\time4math\time4math.cpp(23,23): warning C4244: инициализация: преобразование "_Rep" в "float", возможна потеря данных
+C:\C++\C-Math\time4math\time4math.cpp(23,23): warning C4244:         with
+C:\C++\C-Math\time4math\time4math.cpp(23,23): warning C4244:         [
+C:\C++\C-Math\time4math\time4math.cpp(23,23): warning C4244:             _Rep=__int64
+C:\C++\C-Math\time4math\time4math.cpp(23,23): warning C4244:         ]
+C:\C++\C-Math\time4math\time4math.cpp(24,22): warning C4244: инициализация: преобразование "_Rep" в "float", возможна потеря данных
+C:\C++\C-Math\time4math\time4math.cpp(24,22): warning C4244:         with
+C:\C++\C-Math\time4math\time4math.cpp(24,22): warning C4244:         [
+C:\C++\C-Math\time4math\time4math.cpp(24,22): warning C4244:             _Rep=__int64
+C:\C++\C-Math\time4math\time4math.cpp(24,22): warning C4244:         ]
+C:\C++\C-Math\time4math\time4math.cpp(15,23): warning C4101: endTime: неиспользованная локальная переменная
+C:\C++\C-Math\time4math\time4math.cpp(15,12): warning C4101: startTime: неиспользованная локальная переменная
+  time4math.vcxproj -> C:\C++\C-Math\x64\Debug\time4math.exe

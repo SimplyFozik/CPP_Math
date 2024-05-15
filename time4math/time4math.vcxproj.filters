@@ -26,5 +26,8 @@
     <ClInclude Include="LudmilaMihailovna.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

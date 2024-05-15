@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="LudmilaMihailovna.h" />
     <ClInclude Include="only4math.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -119,7 +119,7 @@ void funcCalculate()
 			cout << NumStack[NumTopStack - 1] << endl;
 		}
 	}
-	cout << "Result " << NumStack[0];
+	cout << "Result " << NumStack[0] << endl;
 }
 
 void funcAnalyze(string arr, int size)
@@ -153,10 +153,6 @@ void funcAnalyze(string arr, int size)
 		else if (arr[i] == ')')
 		{
 			funcPairsPush();
-		}
-		else
-		{
-			cout << "Error!" << endl << "There is no " << to_string(arr[i]) << " Operation!" << endl;
 		}
 	}
 	funcEnd();
