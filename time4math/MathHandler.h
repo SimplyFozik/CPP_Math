@@ -115,7 +115,7 @@ void funcCalculate()
 			cout << NumStack[NumTopStack - 1] << endl;
 		}
 	}
-	cout << "Result " << NumStack[0] << endl;
+	cout << "Result " << NumStack[NumTopStack - 1] << endl;
 }
 
 void funcAnalyze(string arr, int size)
