@@ -20,13 +20,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="only4math.h">
+    <ClInclude Include="ArchivedLibary.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="LudmilaMihailovna.h">
+    <ClInclude Include="MathHandler.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="UI.h">
+    <ClInclude Include="WxUI.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

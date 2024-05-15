@@ -4,7 +4,8 @@
 #include <string>
 #include <chrono> 
 #include <thread>
-#include "LudmilaMihailovna.h"
+#include "MathHandler.h"
+#include "WxUI.h"
 
 using namespace std;
 using namespace std::chrono;

@@ -130,9 +130,9 @@
     <ClCompile Include="time4math.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LudmilaMihailovna.h" />
-    <ClInclude Include="only4math.h" />
-    <ClInclude Include="UI.h" />
+    <ClInclude Include="ArchivedLibary.h" />
+    <ClInclude Include="MathHandler.h" />
+    <ClInclude Include="WxUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

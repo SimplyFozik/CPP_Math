@@ -73,10 +73,6 @@ void funcStackWrite()
 	cout << " <- Top Of Stack" << endl;
 }
 
-void funcCollectNumber()
-{
-
-}
 
 void funcCalculate()
 {
