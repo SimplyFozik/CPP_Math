@@ -4,17 +4,29 @@
 #include <string>
 #include <chrono> 
 #include <thread>
+#include <windows.h>
 #include "MathHandler.h"
 #include "WxUI.h"
 
 using namespace std;
 using namespace std::chrono;
 
+void funcAnimateText(string text)
+{
+    for (int i = 0; i < text.size(); i++)
+    {
+        cout << text[i];
+        Sleep(10);
+    }
+    cout << endl;
+}
+
 int main()
     {
     string dota2;
     double startTime, endTime;
-    cout << "Welcome To C++ Calculator!" << endl << "Type Something Below" << endl;
+    funcAnimateText("Welcome To C++ Calculator!");
+    funcAnimateText("Type Something Below!");
     getline(cin, dota2);
     auto begin = steady_clock::now();
     funcAnalyze(dota2, size(dota2));
