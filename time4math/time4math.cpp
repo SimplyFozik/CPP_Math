@@ -11,16 +11,6 @@
 using namespace std;
 using namespace std::chrono;
 
-void funcAnimateText(string text)
-{
-    for (int i = 0; i < text.size(); i++)
-    {
-        cout << text[i];
-        Sleep(10);
-    }
-    cout << endl;
-}
-
 int main()
     {
     string dota2;

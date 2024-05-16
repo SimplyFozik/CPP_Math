@@ -10,6 +10,16 @@ char Stack[100];
 float NumStack[100];
 string reversed_polk;
 
+void funcAnimateText(string text)
+{
+	for (int i = 0; i < text.size(); i++)
+	{
+		cout << text[i];
+		Sleep(10);
+	}
+	cout << endl;
+}
+
 void funcStackAdd(char symbol)
 {
 	TopStack++;
@@ -149,6 +159,11 @@ void funcAnalyze(string arr, int size)
 		else if (arr[i] == ')')
 		{
 			funcPairsPush();
+		}
+		else
+		{
+			funcAnimateText("Syntax Invalid!");
+			break;
 		}
 	}
 	funcEnd();
