@@ -1,3 +1,21 @@
 ﻿  CppCLR_WinFormsProject.cpp
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\Form1.h(265,20): warning C4244: инициализация: преобразование "_Rep" в "float", возможна потеря данных
+          with
+          [
+              _Rep=__int64
+          ]
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\Form1.h(266,19): warning C4244: инициализация: преобразование "_Rep" в "float", возможна потеря данных
+          with
+          [
+              _Rep=__int64
+          ]
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\Form1.h(267,19): warning C4244: инициализация: преобразование "_Rep" в "float", возможна потеря данных
+          with
+          [
+              _Rep=__int64
+          ]
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\Form1.h(261,11): warning C4101: timespent: неиспользованная локальная переменная
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\Form1.h(257,23): warning C4101: endTime: неиспользованная локальная переменная
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\Form1.h(257,12): warning C4101: startTime: неиспользованная локальная переменная
   AssemblyInfo.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  CppCLR_WinForms_GUI1.vcxproj -> C:\Users\top\Desktop\wx example\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.exe
+  CppCLR_WinForms_GUI1.vcxproj -> E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.exe

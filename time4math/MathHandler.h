@@ -83,6 +83,16 @@ void funcStackWrite()
 	cout << " <- Top Of Stack" << endl;
 }
 
+void funcClearEverything()
+{
+	for (int i = 0; i < 100; i++)
+	{
+		NumStack[i] = 0;
+		Stack[i] = '\0';
+	}
+	reversed_polk = "";
+}
+
 
 void funcCalculate()
 {
@@ -171,6 +181,7 @@ void funcAnalyze(string arr, int size)
 	cout << reversed_polk << endl;
 	funcStackWrite();
 	funcCalculate();
+	funcClearEverything();
 }
 
 //15/(7-(1+1))*3-(2+(1+1))*15/(7-(200+1))*3-(2+(1+1))*(15/(7-(1+1))*3-(2+(1+1))+15/(7-(1+1))*3-(2+(1+1)))

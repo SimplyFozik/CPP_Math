@@ -3,12 +3,20 @@
 #include <string>
 //#include "Form1.h"
 //#include <windows.h>
+#include <sstream>
 
 int TopStack = -1;
 int NumTopStack = 0;
 char Stack[100];
 float NumStack[100];
 std::string reversed_polk;
+
+template <typename T> std::string tostr(const T& t)
+{
+	std::ostringstream os;
+	os << t;
+	return os.str();
+}
 
 void funcStackAdd(char symbol)
 {
@@ -64,17 +72,17 @@ void funcPairsPush()
 	funcStackRemove();
 }
 
-void funcStackWrite()
+void funcClearEverything()
 {
-	for (int i = 0; i < TopStack; i++)
+	for (int i = 0; i < 100; i++)
 	{
-		//std::cout << Stack[i];
+		NumStack[i] = 0;
+		Stack[i] = '\0';
 	}
-	//std::cout << " <- Top Of Stack" << std::endl;
+	reversed_polk = "";
 }
 
-
-float funcCalculate()
+float funcCalculate(std::string& new_string)
 {
 	for (int i = 0; i < reversed_polk.size(); i++)
 	{
@@ -91,6 +99,8 @@ float funcCalculate()
 		}
 		else if (funcPriority(reversed_polk[i]) == 0 || funcPriority(reversed_polk[i]) == 1)
 		{
+			//new_string = "";
+			new_string += (tostr(NumStack[NumTopStack - 2]) + " " + reversed_polk[i] + " " + tostr(NumStack[NumTopStack - 1]) + " = ");
 			//std::cout << NumStack[NumTopStack - 2] << " " << reversed_polk[i] << " " << NumStack[NumTopStack - 1] << " = ";
 			
 			switch (reversed_polk[i])
@@ -112,13 +122,14 @@ float funcCalculate()
 				NumTopStack--;
 				break;
 			}
+			new_string += (tostr(NumStack[NumTopStack - 1]) + "\n");
 			//std::cout << NumStack[NumTopStack - 1] << std::endl;
 		}
 	}
 	return NumStack[NumTopStack - 1];
 }
 
-float funcAnalyze(std::string arr, int size)
+float funcAnalyze(std::string arr, int size,std::string& new_string)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -158,8 +169,9 @@ float funcAnalyze(std::string arr, int size)
 	funcEnd();
 	//std::cout << std::endl;
 	//std::cout << reversed_polk << std::endl;
-	funcStackWrite();
-	return funcCalculate();
+	float res = funcCalculate(new_string);
+	funcClearEverything();
+	return res;
 }
 
 //15/(7-(1+1))*3-(2+(1+1))*15/(7-(200+1))*3-(2+(1+1))*(15/(7-(1+1))*3-(2+(1+1))+15/(7-(1+1))*3-(2+(1+1)))

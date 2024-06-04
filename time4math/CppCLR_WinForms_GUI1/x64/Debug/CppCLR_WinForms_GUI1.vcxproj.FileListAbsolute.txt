@@ -3,3 +3,8 @@ C:\Users\top\Desktop\wx example\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_G
 C:\Users\top\Desktop\wx example\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.Form1.resources
 C:\Users\top\Desktop\wx example\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.vcxproj.GenerateResource.cache
 C:\Users\top\Desktop\wx example\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.exe
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.vcxproj.AssemblyReference.cache
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.vcxproj.SuggestedBindingRedirects.cache
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.Form1.resources
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.vcxproj.GenerateResource.cache
+E:\CPP\CPP_Math\time4math\CppCLR_WinForms_GUI1\x64\Debug\CppCLR_WinForms_GUI1.exe
